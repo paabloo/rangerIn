@@ -1,0 +1,67 @@
+$inputRangeMainHeight: 8px;
+$inputRangeIndicatorWidth: 24px;
+$inputRangeIndicatorHeight: 24px;
+
+.input-range {
+    &__belt {
+        position: relative;
+        width: 100%;
+        height: $inputRangeMainHeight;
+        border: 1px solid #c0bebe;
+        border-radius: 4px;
+        background: #ffffff;
+    }
+    &__legend {
+        position: absolute;
+        top: -$inputRangeIndicatorHeight - 4px;
+        width: 100%;
+
+        font-size: 15px;
+        font-weight: 300;
+        i {
+            position: absolute;
+            font-style: normal;
+            font-weight: normal;
+            &.legend--min {
+                left: 0;
+            }
+            &.legend--mid {
+                left: 0;
+                right: 0;
+                text-align: center;
+            }
+            &.legend--max {
+                right: 0;
+            }
+        }
+    }
+    &__progress {
+        position: absolute;
+        display: block;
+        max-width: 100%;
+        min-width: $inputRangeIndicatorWidth / 2;
+        height: $inputRangeMainHeight - 2;
+        background: #c0bebe;
+    }
+    &__indicator {
+        position: absolute;
+        top: 50%;
+        margin-top: -$inputRangeIndicatorHeight / 2;
+        display: block;
+        width: $inputRangeIndicatorWidth;
+        height: $inputRangeIndicatorHeight;
+        border-radius: 50%;
+        background: #00aae4;
+        cursor: pointer;
+        &:after {
+            content: attr(data-label);
+            position: absolute;
+            top: $inputRangeIndicatorHeight + 4;
+            width: $inputRangeIndicatorWidth;
+            font-size: 15px;
+            line-height: 1;
+            text-align: center;
+            color: #00aae4;
+        }
+    }
+}
